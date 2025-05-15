@@ -1,3 +1,9 @@
+pdfs/*
+!pdfs/.gitkeep
+
+pngs/*
+!pngs/.gitkeep 
+
 # Logs
 logs
 *.log
