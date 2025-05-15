@@ -1,16 +1,22 @@
-const { convertPdfToPngFiles } = require("./pdfConverter");
+const fs = require("fs");
+const { convertPdfToPic } = require("./pdftopic");
+const path = require("path");
 
-// Example usage
-async function main() {
-  try {
-    const results = await convertPdfToPngFiles(
-      "/path/to/pdf/folder",
-      "/path/to/output/folder"
-    );
-    console.log("Conversion results:", results);
-  } catch (error) {
-    console.error("Error:", error.message);
-  }
-}
+const pdfFileName = "PresentationBookA-Grade1.pdf";
+const pdfPath = path.join("./pdfs", pdfFileName);
+const pdfBuffer = fs.readFileSync(pdfPath);
+const baseFileName = path.basename(pdfFileName, ".pdf");
 
-main();
+(async () => {
+  const results = await convertPdfToPic(
+    pdfBuffer,
+    baseFileName,
+    [9, 10, 11, 12, 13, 14]
+  );
+
+  results.forEach((result) => {
+    const { fileName, buffer } = result;
+    const outputPath = path.join("./pngs", fileName);
+    fs.writeFileSync(outputPath, buffer);
+  });
+})();

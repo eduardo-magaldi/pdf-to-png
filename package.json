@@ -2,11 +2,10 @@
   "name": "pdf-to-png",
   "version": "1.0.0",
   "description": "Convert PDF files to PNG images",
-  "main": "pdfConverter.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "pdf-to-png-converter": "^2.0.0"
+    "pdftopic": "^1.0.7-alpha"
   }
 }
