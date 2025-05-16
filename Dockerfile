@@ -1,6 +1,6 @@
-FROM node:latest
+FROM node:20.19
 
-WORKDIR /.
+WORKDIR /app
 
 COPY . .
 
