@@ -4,7 +4,7 @@
   "description": "Convert PDF files to PNG images",
   "scripts": {
     "build": "docker build -t pdf-to-png .",
-    "run": "docker run -it -v $(pwd)/pdfs:/app/pdfs -v $(pwd)/pngs:/app/pngs pdf-to-png"
+    "run": "docker run -it -v $(pwd)/pdfs:/pdfs -v $(pwd)/pngs:/pngs pdf-to-png"
   },
   "dependencies": {
     "pdftopic": "^1.0.7-alpha"
